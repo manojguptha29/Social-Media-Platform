@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - ConnectHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>My Profile</h2>
+
+        <button onclick="location.href='user.html'">
+            Home
+        </button>
+
+    </nav>
+
+
+    <div class="profile-container">
+
+        <div class="profile-card">
+
+            <h2 id="profileName"></h2>
+
+            <p id="profileEmail"></p>
+
+            <p id="profilePosts"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        loadProfile();
+    </script>
+
+</body>
+</html>

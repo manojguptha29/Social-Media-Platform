@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Social Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Header -->
+    <header class="top-navbar">
+        <h1 class="brand-logo">Social Space</h1>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Main 3-Column Layout -->
+    <div class="dashboard-layout">
+
+        <!-- Left Vertical Sidebar Navigation -->
+        <aside class="sidebar">
+            
+            <!-- Main Home Feed Header -->
+            <button class="sidebar-item main-item active" id="btn-home" onclick="switchTab('home')">
+                <span class="icon">🏠</span> Home
+            </button>
+            
+            <!-- Sub-feeds Indented Under Home -->
+            <div class="sub-menu">
+                <button class="sidebar-item sub-item" id="btn-trending" onclick="switchTab('trending')">
+                    <span class="icon">🔥</span> Trending
+                </button>
+                <button class="sidebar-item sub-item" id="btn-liked" onclick="switchTab('liked')">
+                    <span class="icon">❤️</span> Liked Posts
+                </button>
+                <button class="sidebar-item sub-item" id="btn-saved" onclick="switchTab('saved')">
+                    <span class="icon">🔖</span> Saved Posts
+                </button>
+            </div>
+
+            <!-- Other Navigation Items Stacked Vertically -->
+            <button class="sidebar-item" onclick="showProfile()">
+                <span class="icon">👤</span> Profile
+            </button>
+            <button class="sidebar-item" onclick="toggleCreatePost()">
+                <span class="icon">➕</span> Create Post
+            </button>
+            <button class="sidebar-item">
+                <span class="icon">👥</span> Friends
+            </button>
+            <button class="sidebar-item">
+                <span class="icon">💬</span> Messages
+            </button>
+            <button class="sidebar-item">
+                <span class="icon">🔔</span> Notifications
+            </button>
+            <button class="sidebar-item">
+                <span class="icon">⚙️</span> Settings
+            </button>
+        </aside>
+
+        <!-- Center Dynamic Feed Container -->
+        <main class="feed-area">
+            <h2 id="feedHeading" class="feed-title">Recent Feed</h2>
+            <div id="postsContainer">
+                <div class="empty-card">
+                    No posts yet. Be the first to share something!
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (Suggested Friends Widget) -->
+        <aside class="widgets-area">
+            <div class="widget-card">
+                <h3 class="widget-title">
+                    <span class="icon">👥</span> Suggested Friends
+                </h3>
+                <div class="suggested-user">
+                    <span>Alex Johnson</span>
+                    <button class="add-btn">Add</button>
+                </div>
+                <div class="suggested-user">
+                    <span>Sarah Smith</span>
+                    <button class="add-btn">Add</button>
+                </div>
+                <div class="suggested-user">
+                    <span>David Lee</span>
+                    <button class="add-btn">Add</button>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            if (typeof loadFeed === 'function') {
+                loadFeed('home');
+            }
+        };
+    </script>
+</body>
+</html>

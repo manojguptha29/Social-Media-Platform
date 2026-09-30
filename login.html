@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Social Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <!-- Top Blue Navigation Bar -->
+    <header class="top-navbar">
+        <h1 class="brand-logo">Social Space</h1>
+        <a href="signup.html" class="nav-link-btn">Sign Up</a>
+    </header>
+
+    <!-- Centered Login Form Card -->
+    <main class="auth-container">
+        <div class="form-card">
+            <h2>Login</h2>
+            
+            <input type="email" id="loginEmail" placeholder="Enter Email">
+            <input type="password" id="loginPassword" placeholder="Enter Password">
+            
+            <button type="button" class="btn-primary" onclick="login()">Login</button>
+            
+            <p class="switch-auth-text">
+                Don't have an account? <a href="signup.html">Create Account</a>
+            </p>
+            
+            <p id="loginMessage" class="error-message"></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

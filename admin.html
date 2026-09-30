@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - ConnectHub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>Admin Dashboard</h2>
+
+        <button onclick="adminLogout()">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <div class="admin-container">
+
+        <h2>Users</h2>
+
+        <div id="usersList"></div>
+
+
+        <h2>All Posts</h2>
+
+        <div id="adminPosts"></div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        loadAdminData();
+    </script>
+
+</body>
+</html>

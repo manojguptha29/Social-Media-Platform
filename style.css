@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 1. FIX WHITE BACKGROUND: Rule for both Auth and Dashboard pages */
+body.auth-page, 
+body.dashboard-body {
+    background-color: #0b1120; /* Dark blue background covering full height */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navbar Header */
+.top-navbar {
+    background-color: #1d61e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    width: 100%;
+}
+
+.brand-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-link-btn, 
+.logout-btn {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 2. FIX HORIZONTAL ORDER: Setup 3-Column Grid Layout */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 280px; /* Sidebar | Feed Area | Right Panel */
+    gap: 24px;
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Vertical Sidebar Ordering */
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Forces buttons into vertical stack */
+    gap: 4px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-item:hover,
+.sidebar-item.active {
+    background-color: #1e52db;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Sub-feed Indented Section Under Home */
+.sub-menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px; /* Indents Trending, Liked, Saved under Home */
+    border-left: 2px solid #1e293b;
+    margin: 4px 0 8px 16px;
+    gap: 2px;
+}
+
+.sub-item {
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+/* Feed Area & Containers */
+.feed-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feed-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.empty-card,
+.widget-card {
+    background-color: #121d33;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* Right Widgets Area */
+.widgets-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.suggested-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+}
+
+.add-btn {
+    background-color: #1d61e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #154ec4;
+}
+
+/* Auth Cards Styling */
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-card {
+    background-color: #121d33;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 36px 32px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.form-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.form-card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background-color: #0b1426;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-card input::placeholder {
+    color: #64748b;
+}
+
+.form-card input:focus {
+    border-color: #1d61e8;
+}
+
+.btn-primary {
+    background-color: #1d61e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #154ec4;
+}
+
+.switch-auth-text {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.switch-auth-text a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-auth-text a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 10px;
+}
